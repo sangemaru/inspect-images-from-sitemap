@@ -67,9 +67,12 @@ def main():
     output_csv_file = "image_data.csv"
     num_threads = 10
 
+    # Initialize page_urls as an empty list
+    page_urls = []
+
     with open(sitemap_list_file, 'r') as f:
         sitemap_urls = f.read().splitlines()
-    
+
     # Parse sitemaps to get page URLs
     for sitemap_url in sitemap_urls:
         response = requests.get(sitemap_url)
